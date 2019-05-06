@@ -19,7 +19,7 @@ However, each sequence pack seems to have their dedicated sample block (referred
 
 Arrays are sorted in order, so size calculation is fairly easy for what we need.
 To get the arrays, follow the following notes (similarly you can take a peek at the code, ParseData function):
-
+```
 data1:
 @0x10 some value, 2 bytes, shifted left by 2 bits
 @0x14 some value, 2 bytes, shifted left by 3 bits
@@ -35,7 +35,7 @@ data2:
 (some offset to something2) + shifted value at @0x18 = SampleBlockOffsetTable
 SampleBlockOffsetTable + shifted value at @0x1C = SequencePackOffsetTable
 SequencePackOffsetTable + shifted value at @0x20 = (some offset to something3)
-
+```
 ## CALCULATING OFFSETS FROM THE ARRAYS
 
 The offset calculation process is very simple:
