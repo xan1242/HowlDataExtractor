@@ -2,6 +2,8 @@
 This mess of notes describes the HOWL's data structure, still unfinished, lots of unknown stuff.
 Everything was being done using the review copy of the game but you can use whichever version you like.
 
+Help is wanted to get this format dissected properly! :)
+
 ## DATA OFFSET ARRAYS
 
 Since PS1's CPU reads in 16-bit words, most of the (large) values are bitshifted to the left and squeezed inside of a 16-bit value.
