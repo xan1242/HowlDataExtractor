@@ -115,7 +115,7 @@ struct TempoBlock (sizeof: 6)
 I haven't dissected the tracks yet (here's where I'm completely lost and I'll need help with).
 Every track seems to start with 01 00 00 xx (in 3.seq = crash cove and 11.seq = ngin labs at least)
 
-Here's an example of a HOWL track from Crash Cove (3.seq as extracted by the tool):
+Here's an example of a HOWL track from Crash Cove (3.seq as extracted by the tool, this should be the cowbell drum track):
 ```
 01 00 00 09 00 00 07 6C 9E 78 05 01 74 21 01 01
 1B 05 01 6C 3A 01 01 3E 05 01 61 2F 01 01 49 05
