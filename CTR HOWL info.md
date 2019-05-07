@@ -102,7 +102,7 @@ struct MultiTrackDataBlock (sizeof: 8) // used to point to invincibility music o
 	short int unk4;
 }
 
-struct TempoBlock (sizeof: 6)
+struct TempoBlock (sizeof: 8)
 {
 	unsigned char bitshifter; // to left
 	unsigned char unk1;
