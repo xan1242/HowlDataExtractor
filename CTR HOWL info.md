@@ -169,5 +169,43 @@ Here's an example of a HOWL track from Crash Cove (3.seq as extracted by the too
 0 - congas
 ```
 
+### SEQUENCE TRACK INFO
+```
+struct HowlSequenceTrack
+{
+	char drum_indicator; //??? 1 = drum, else melodic
+	char unk1;
+	char track_start; // track time start? // (delta time or something, increasing this value = track starts later)
+	char unk2; // if 0 = no sound, if too large it can crash, perhaps channel priority?
+	char key_transpose; // octave transpose, if more than 1 = transpose up, 1 has the same effect as 0, possibly a signed value, haven't checked
+	char attack_time; // ? it has a similar effect to track time start but adds fadein (increases attack time)
+	char unk3; // changing this value causes a crash, possibly a count or index of something (channel number?)
+	char pan; // track's channel panning (adds to the instrument's value)
+	unsigned char track_data[any];
+}
+
+struct track_data // part of it anyway... this can very likely vary in size thanks to different commands
+{
+	char delta_time; // start time
+	char cmd_type; // 05 = note on
+	char cmd_value; // note value, which note to play
+	char cmd_value2; // key velocity
+	char cmd_value3; // note duration
+}
+
+(extra)
+// these following two appear after every command after the second one
+char cmd_unk1; // track markers? setting this to 3 causes looping problems
+char cmd_unk2; // this seems to increment with every note or something...
+```
+
+As is noted above, different command types probably have different sizes, above is described note on
+Every command should start with a delta time
+After every note it seems to have some form of track positioning markers, idk what this means yet...
+
+COMMAND LIST:
+
+0x05 = note on, size 4 bytes
+
 ## HOWL SAMPLE BLOCKS
 Haven't taken a look at it yet... TODO
