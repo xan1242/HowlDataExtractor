@@ -150,6 +150,7 @@ Here's an example of a HOWL track from Crash Cove (3.seq as extracted by the too
 ```
 
 ### CRASH COVE RELATIVE TRACK OFFSETS (in order of appearance in the file 3.seq)
+```
 0x138 - congas
 0x310 - cowbell
 0x4A4 - closed hi hat
@@ -166,6 +167,7 @@ Here's an example of a HOWL track from Crash Cove (3.seq as extracted by the too
 0x2CAC - bass
 0x343C - vibraphone
 0 - congas
+```
 
 ## HOWL SAMPLE BLOCKS
 Haven't taken a look at it yet... TODO
