@@ -97,8 +97,8 @@ struct TrackInfoDataBlock (sizeof: 8)
 struct MultiTrackDataBlock (sizeof: 8) // used to point to invincibility music or something idk.
 {
 	short int unk1; // offsets tempo info?
-	short int InvincibilitySeqTrackOffset;
-	short int unk3;
+	short int InvincibilitySeqTrackOffsetAku;
+	short int InvincibilitySeqTrackOffsetUka;
 	short int unk4;
 }
 
@@ -184,24 +184,20 @@ struct HowlSequenceTrack
 	unsigned char track_data[any];
 }
 
+// most of the data is read in big endian, adopting MIDI's standards
 struct track_data // part of it anyway... this can very likely vary in size thanks to different commands
 {
-	char delta_time; // start time
+	vlv (char or short) delta_time; // BIG ENDIAN VALUE
 	char cmd_type; // 05 = note on
+	// the rest is variable, some have more values than the other, this is just for note on event
 	char cmd_value; // note value, which note to play
 	char cmd_value2; // key velocity
 	char cmd_value3; // note duration
 }
-
-(extra)
-// these following two appear after every command after the second one
-char cmd_unk1; // track markers? setting this to 3 causes looping problems
-char cmd_unk2; // this seems to increment with every note or something...
 ```
 
 As is noted above, different command types probably have different sizes, above is described note on
-Every command should start with a delta time
-After every note it seems to have some form of track positioning markers, idk what this means yet...
+Every command should start with a delta time just like in MIDI
 
 COMMAND LIST:
 
