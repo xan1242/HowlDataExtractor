@@ -192,7 +192,6 @@ struct track_data // part of it anyway... this can very likely vary in size than
 	// the rest is variable, some have more values than the other, this is just for note on event
 	char cmd_value; // note value, which note to play
 	char cmd_value2; // key velocity
-	char cmd_value3; // note duration
 }
 ```
 
