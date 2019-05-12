@@ -149,5 +149,23 @@ Here's an example of a HOWL track from Crash Cove (3.seq as extracted by the too
 20 01 01 9D 7E 03 00 00
 ```
 
+### CRASH COVE RELATIVE TRACK OFFSETS (in order of appearance in the file 3.seq)
+0x138 - congas
+0x310 - cowbell
+0x4A4 - closed hi hat
+0x644 - open hi hat
+0x884 - BASS DRUM
+0xEBC - ride cym
+0x1764 - snare drum
+0x1DB4 - tom/conga/idkwtfisthis
+0x1EAC - tom 2/conga/idkwtfisthis
+0x2004 - main guitar (first melodic track)
+0x2544 - guitar 2 (around 1:06 mark)
+0x261C - muted guitar (accompanying track to previous one)
+0x2680 - steel drums
+0x2CAC - bass
+0x343C - vibraphone
+0 - congas
+
 ## HOWL SAMPLE BLOCKS
 Haven't taken a look at it yet... TODO
