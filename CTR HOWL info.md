@@ -202,6 +202,7 @@ Every command should start with a delta time just like in MIDI
 COMMAND LIST:
 
 - 0x01 = note off, size 1 byte, param = note to turn off
+- 0x03 = track end, size 1 byte, param = unknown
 - 0x05 = note on, size 4 bytes, param = note to play, param2 = note velocity
 
 ## HOWL SAMPLE BLOCKS
