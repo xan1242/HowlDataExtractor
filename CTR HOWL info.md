@@ -107,7 +107,7 @@ struct TempoBlock (sizeof: 8)
 	unsigned char bitshifter; // to left
 	unsigned char unk1;
 	short int TempoBPM;
-	short int Divider_Unknown; // usually is 120, not divider, can be swapped with TempoBPM
+	short int PPQN; // or TPQN
 	short int unk2;
 }
 ```
