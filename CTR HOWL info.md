@@ -170,6 +170,7 @@ Here's an example of a HOWL track from Crash Cove (3.seq as extracted by the too
 ```
 
 ### SEQUENCE TRACK INFO
+(newer research shows that both of these structs are mostly wrong, will revise later)
 ```
 struct HowlSequenceTrack
 {
@@ -204,6 +205,8 @@ COMMAND LIST:
 - 0x01 = note off, size 1 byte, param = note to turn off
 - 0x03 = track end, size 1 byte, param = unknown
 - 0x05 = note on, size 4 bytes, param = note to play, param2 = note velocity
+- 0x07 = panning, size 1 byte, param = pan position, signed
+- 0x09 = track start, size 1 byte, param = unknown
 
 ## HOWL SAMPLE BLOCKS
 Haven't taken a look at it yet... TODO
