@@ -407,7 +407,7 @@ void ConvertEvents(FILE* foutput, unsigned char Channel, unsigned int Start)
 			// convert value to a percentage then apply it to the 0 - 127 range (truncate to 4 bits using float precision)
 			valpercent = (float)(cmd_param1) / 255;
 			cmd_param1 = (unsigned char)(valpercent * 127.0);
-			printf("converting to: %d (%.2f%%)\n", cmd_param1, valpercent*100);
+			XNFS_printf(3, "converting to: %d (%.2f%%)\n", cmd_param1, valpercent*100);
 			Midi_WriteVolumeEvent(foutput, delta, vlv_length, Channel, cmd_param1);
 			Cursor += 2;
 			break;
