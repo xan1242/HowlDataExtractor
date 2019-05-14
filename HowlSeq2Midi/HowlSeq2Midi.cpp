@@ -325,6 +325,7 @@ void ConvertEvents(FILE* foutput, unsigned char Channel, unsigned int Start)
 	unsigned char cmd_param1 = 0;
 	unsigned char cmd_param2 = 0;
 	unsigned int vlv_length = 1;
+	float valpercent = 0;
 	bool bTrackEnd = false;
 
 	//printf("Current val: %hX\n", *(short int*)((unsigned int)(SeqPack.sequencedata) + Cursor));
@@ -402,7 +403,11 @@ void ConvertEvents(FILE* foutput, unsigned char Channel, unsigned int Start)
 			break;
 		case 6:
 			cmd_param1 = *(unsigned char*)((unsigned int)(SeqPack.sequencedata) + Cursor + 1);
-			XNFS_printf(3, "delta: %X\ttrack volume: %d\n", delta, cmd_param1);
+			XNFS_printf(3, "delta: %X\ttrack volume: %d\t", delta, cmd_param1);
+			// convert value to a percentage then apply it to the 0 - 127 range (truncate to 4 bits using float precision)
+			valpercent = (float)(cmd_param1) / 255;
+			cmd_param1 = (unsigned char)(valpercent * 127.0);
+			printf("converting to: %d (%.2f%%)\n", cmd_param1, valpercent*100);
 			Midi_WriteVolumeEvent(foutput, delta, vlv_length, Channel, cmd_param1);
 			Cursor += 2;
 			break;
@@ -417,10 +422,10 @@ void ConvertEvents(FILE* foutput, unsigned char Channel, unsigned int Start)
 			XNFS_printf(3, "delta: %X\ttrack start: %X\n", delta, cmd_param1);
 			if (Channel != 9) // not writing volume for drum tracks yet! TODO: add function to extract drum tracks separately (ignore ch 10 directive)
 			{
-				// THIS MIGHT BE WRONG!!!
-				if (SeqPack.iidb[cmd_param1].volume >= 0x80)
-					SeqPack.iidb[cmd_param1].volume %= 0x80;
-				Midi_WriteVolumeEvent(foutput, 0, 1, Channel, SeqPack.iidb[cmd_param1].volume);
+				// convert value to a percentage then apply it to the 0 - 127 range (truncate to 4 bits using float precision)
+				valpercent = (float)(SeqPack.iidb[cmd_param1].volume) / 255;
+				cmd_param2 = (unsigned char)(valpercent * 127.0); // stealing cmd_param2 here...
+				Midi_WriteVolumeEvent(foutput, 0, 1, Channel, cmd_param2);
 			}
 			Cursor += 2;
 			break;
