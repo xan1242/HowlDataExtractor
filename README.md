@@ -14,3 +14,14 @@ Be warned, this tool is still unfinished!
 - It currently only extracts the offset tables and sequence packs.
 - Add documentation of the file format
 - Reverse more of the format
+- Sample pack extraction
+- Repacking
+
+# Demos
+Here's a demonstration what you can achieve with these tools:
+
+https://soundcloud.com/xanvier/crash-team-racing-ngin-labs-sound-canvas-va
+
+https://soundcloud.com/xanvier/crash-team-racing-hot-air-skyway-sound-canvas-va
+
+https://soundcloud.com/xanvier/crash-team-racing-crash-cove-midi-rip (this one is an older rip)
