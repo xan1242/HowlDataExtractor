@@ -322,7 +322,7 @@ void ConvertEvents(FILE* foutput, unsigned char Channel, unsigned int Start)
 	//unsigned int size = 0x540;
 	unsigned int delta = 0;
 	unsigned char cmd = 0;
-	unsigned char cmd_param1 = 0;
+	signed char cmd_param1 = 0;
 	unsigned char cmd_param2 = 0;
 	unsigned int vlv_length = 1;
 	float valpercent = 0;
@@ -413,7 +413,8 @@ void ConvertEvents(FILE* foutput, unsigned char Channel, unsigned int Start)
 			break;
 		case 7:
 			cmd_param1 = *(unsigned char*)((unsigned int)(SeqPack.sequencedata) + Cursor + 1);
-			XNFS_printf(3, "delta: %X\ttrack pan: %d\n", delta, cmd_param1);
+			cmd_param1 = -cmd_param1; // HOWL swaps L and R around...
+			XNFS_printf(3, "delta: %X\ttrack pan: %d\n", delta, cmd_param1); 
 			Midi_WritePanEvent(foutput, delta, vlv_length, Channel, cmd_param1);
 			Cursor += 2;
 			break;
