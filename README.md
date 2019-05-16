@@ -25,3 +25,10 @@ https://soundcloud.com/xanvier/crash-team-racing-ngin-labs-sound-canvas-va
 https://soundcloud.com/xanvier/crash-team-racing-hot-air-skyway-sound-canvas-va
 
 https://soundcloud.com/xanvier/crash-team-racing-crash-cove-midi-rip (this one is an older rip)
+
+# MIDI conversions
+I've decided to put my conversions here in this repo as well! Most of them are made specifically to be played on a Roland SC-VA (SC-8850 compatible)
+
+Note that some aren't finished (particularly Crash Cove).
+
+You'll find MIDI files and Cakewalk project files in respective folders inside "MIDI conversions"!
