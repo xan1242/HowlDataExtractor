@@ -20,11 +20,7 @@ Be warned, this tool is still unfinished!
 # Demos
 Here's a demonstration what you can achieve with these tools:
 
-https://soundcloud.com/xanvier/crash-team-racing-ngin-labs-sound-canvas-va
-
-https://soundcloud.com/xanvier/crash-team-racing-hot-air-skyway-sound-canvas-va
-
-https://soundcloud.com/xanvier/crash-team-racing-crash-cove-midi-rip (this one is an older rip)
+https://soundcloud.com/xanvier/sets/crash-team-racing-midis-sc-va
 
 # MIDI conversions
 I've decided to put my conversions here in this repo as well! Most of them are made specifically to be played on a Roland SC-VA (SC-8850 compatible)
